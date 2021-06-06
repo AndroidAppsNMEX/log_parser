@@ -43,14 +43,14 @@ Once the application is up & running go to
 ```bash
 localhost:5000
 ```
-![Main Screen](master/main_screen.png)
+![Main Screen](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/main_screen.PNG)
 
 
 Click on Search Logs and introduce start and end timestamp, as well as origin host.
 
-![Search Engine](master/search_engine.png)
+![Search Engine](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/search_engine.png)
 
-![Results](master/results.png)
+![Results](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/results.png)
 
 Every hour at the output folder the summary can be found
 
