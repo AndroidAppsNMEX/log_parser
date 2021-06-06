@@ -43,14 +43,14 @@ Once the application is up & running go to
 ```bash
 localhost:5000
 ```
-![Main Screen](images/main_screen.png)
+![Main Screen](master/main_screen.png)
 
 
 Click on Search Logs and introduce start and end timestamp, as well as origin host.
 
-![Search Engine](images/search_engine.png)
+![Search Engine](master/search_engine.png)
 
-![Results](images/results.png)
+![Results](master/results.png)
 
 Every hour at the output folder the summary can be found
 
