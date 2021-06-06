@@ -1,0 +1,81 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:8.0.19
+    command: '--default-authentication-plugin=mysql_native_password --secure-file-priv=/data/logs'
+    restart: always
+    secrets:
+      - db-password
+    volumes:
+      - db-data:/var/lib/mysql
+      - type: bind
+        source: ./logs
+        target: /data/logs
+    networks:
+      - backend-network
+    environment:
+      - MYSQL_DATABASE=logs
+      - MYSQL_ROOT_PASSWORD=pepe
+
+  parser:
+    build: parser
+    restart: always
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /data/logs
+      - type: bind
+        source: ./config
+        target: /config
+    secrets:
+      - db-password
+    networks:
+      - backend-network
+      - frontend-network
+    links:
+      - db
+  schedule:
+    build: schedule
+    restart: always
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /data/logs
+      - type: bind
+        source: ./config
+        target: /config
+      - type: bind
+        source: ./output
+        target: /data/output
+    secrets:
+      - db-password
+    networks:
+      - backend-network
+      - frontend-network
+    links:
+      - db
+  interface:
+    build: interface
+    restart: always
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /data/logs
+    secrets:
+      - db-password
+    networks:
+      - backend-network
+      - frontend-network
+    links:
+      - db
+
+volumes:
+  db-data:
+secrets:
+  db-password:
+    file: db/password.txt
+networks:
+  backend-network:
+  frontend-network:

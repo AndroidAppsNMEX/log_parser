@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+         <a href = "{{ url_for('show_all') }}">Logs - Result Search</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+       <h3>Logs (<a href = "{{ url_for('search') }}">Search Logs
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+               <th>UNIX Timestamp</th>
+               <th>Datetime</th>
+               <th>From Host</th>
+               <th>To Host</th>
+               <th>Loaddate</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for log in logs %}
+               <tr>
+                  <td>{{ log.unix_timestamp }}</td>
+                  <td>{{ log.log_datetime }}</td>
+                  <td>{{ log.from_host }}</td>
+                  <td>{{ log.to_host }}</td>
+                  <td>{{ log.loaddate }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

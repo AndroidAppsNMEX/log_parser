@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+<h3> Logs Search Engine </h3>
+
+<div>
+    <form action="{{ url_for('handle_data') }}" method="post">
+        <input type="text" name="init_datetime" size="100" placeholder="Start Datetime"> </br>
+        <input type="text" name="end_datetime" size="100" placeholder="End Datetime"> </br>
+        <input type="text" name="from_host" size="100" placeholder="From Host"> </br>
+        <input type="submit" id="spotButton" value="Search">
+    </form>
+</div>
+
+</body>
+</html>
