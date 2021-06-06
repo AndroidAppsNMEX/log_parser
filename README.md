@@ -48,9 +48,9 @@ localhost:5000
 
 Click on Search Logs and introduce start and end timestamp, as well as origin host.
 
-![Search Engine](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/search_engine.png)
+![Search Engine](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/search_engine.PNG)
 
-![Results](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/results.png)
+![Results](https://github.com/AndroidAppsNMEX/log_parser/blob/main/images/results.PNG)
 
 Every hour at the output folder the summary can be found
 
